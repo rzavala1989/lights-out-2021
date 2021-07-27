@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Cell from './Cell';
 import './Board.css';
+import Rodal from 'rodal';
+import 'rodal/lib/rodal.css';
 
 /** Game board of Lights out.
  *
@@ -42,7 +44,17 @@ class Board extends Component {
     this.state = {
       hasWon: false,
       board: this.createBoard(),
+      visible: false,
     };
+  }
+
+  /* create modal functionality */
+  show() {
+    this.setState({ visible: true });
+  }
+
+  hide() {
+    this.setState({ visible: false });
   }
 
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
@@ -103,9 +115,18 @@ class Board extends Component {
       tblBoard.push(<tr key={y}>{row}</tr>);
     }
     return (
-      <table className='Board'>
-        <tbody>{tblBoard}</tbody>
-      </table>
+      <Fragment>
+        <button class='glow-on-hover neon-orange-modal' onClick={this.show.bind(this)}>
+          How To Play
+        </button>
+
+        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height='460' width='620'>
+          <div>Content</div>
+        </Rodal>
+        <table className='Board'>
+          <tbody>{tblBoard}</tbody>
+        </table>
+      </Fragment>
     );
   }
   render() {
