@@ -54,7 +54,27 @@ body {
   top: 5px;
   left: 5px;
 }
+.neon-blue-modal {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+  color: #000000;
+  font-size: 38px;
+  text-shadow: 0 0 3vw #f40a35;
+  animation: neon-blue 2s linear infinite;
+  -moz-animation: neon-blue 2s linear infinite;
+  -webkit-animation: neon-blue 2s linear infinite;
+  -o-animation: neon-blue 2s linear infinite;
+  top: 5px;
+  left: 5px;
+}
+.modal-text {
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 20px !important;
+}
 
+.rodal-dialog {
+  padding: 15px 50px !important;
+}
 .glow-on-hover:before {
   content: '';
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);

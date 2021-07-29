@@ -117,11 +117,26 @@ class Board extends Component {
     return (
       <Fragment>
         <button class='glow-on-hover neon-orange-modal' onClick={this.show.bind(this)}>
-          How To Play
+          <span class='neon-blue-modal'>How</span> To <span class='neon-blue-modal'>Play</span>
         </button>
 
-        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height='460' width='620'>
-          <div>Content</div>
+        <Rodal
+          className='modal-text'
+          visible={this.state.visible}
+          onClose={this.hide.bind(this)}
+          height='460'
+          width='620'
+          enterAnimation='door'
+          leaveAnimation='door'
+        >
+          <h1>The Ins and Outs:</h1>
+          <p className='modal-text'>
+            The game consists of a 5 by 5 grid of lights. When the game starts, a random number or a stored pattern of
+            these lights is switched on. Pressing any of the lights will toggle it and the four adjacent lights. The
+            goal of the puzzle is to switch all the lights off, preferably in as few button presses as possible.
+          </p>
+          <br />
+          <img src='lights-out.png'></img>
         </Rodal>
         <table className='Board'>
           <tbody>{tblBoard}</tbody>

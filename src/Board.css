@@ -82,3 +82,12 @@ table tr:last-child td:last-child {
     color: #146c80;
   }
 }
+
+.modal-text {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+p.modal-text {
+  text-align: left;
+}
